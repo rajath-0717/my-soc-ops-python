@@ -1,24 +1,40 @@
 <div id="game-container">
-<div class="flex flex-col items-center justify-center min-h-full p-6 bg-gray-50">
-    <div class="text-center max-w-sm">
-        <h1 class="text-4xl font-bold text-gray-900 mb-2">Soc Ops</h1>
-        <p class="text-lg text-gray-600 mb-8">Social Bingo</p>
-
-        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200 mb-8">
-            <h2 class="font-semibold text-gray-800 mb-3">How to play</h2>
-            <ul class="text-left text-gray-600 text-sm space-y-2">
-                <li>• Find people who match the questions</li>
-                <li>• Tap a square when you find a match</li>
-                <li>• Get 5 in a row to win!</li>
-            </ul>
+<div class="flex flex-col items-center justify-center min-h-full p-6 bg-gradient-to-br from-purple-50 to-pink-50">
+    <div class="text-center max-w-md">
+        <!-- Hero Section -->
+        <div class="mb-8">
+            <div class="text-6xl mb-4">🎯</div>
+            <h1 class="text-5xl font-bold text-gray-900 mb-3" style="font-family: 'Fredoka One', cursive;">Soc Ops</h1>
+            <p class="text-xl text-gray-700 mb-2">Social Bingo Adventure</p>
+            <p class="text-sm text-gray-600">Connect with friends through hilarious questions!</p>
         </div>
 
+        <!-- Rules Card -->
+        <div class="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-white/20 mb-8">
+            <h2 class="font-bold text-gray-800 mb-4 text-lg">How to Play 🎮</h2>
+            <div class="space-y-3">
+                <div class="flex items-center text-left">
+                    <span class="text-2xl mr-3">👥</span>
+                    <span class="text-gray-700 text-sm">Find people who match the questions</span>
+                </div>
+                <div class="flex items-center text-left">
+                    <span class="text-2xl mr-3">👆</span>
+                    <span class="text-gray-700 text-sm">Tap a square when you find a match</span>
+                </div>
+                <div class="flex items-center text-left">
+                    <span class="text-2xl mr-3">🏆</span>
+                    <span class="text-gray-700 text-sm">Get 5 in a row to win!</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Button -->
         <button
             hx-post="/start"
             hx-target="#game-container"
             hx-swap="outerHTML"
-            class="w-full bg-accent text-white font-semibold py-4 px-8 rounded-lg text-lg active:bg-accent-light transition-colors">
-            Start Game
+            class="w-full playful-btn text-lg px-8 py-4">
+            🚀 Start Your Adventure
         </button>
     </div>
 </div>

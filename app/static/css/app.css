@@ -6,9 +6,75 @@ body,
 }
 
 body {
-    font-family: system-ui, -apple-system, sans-serif;
+    font-family: Inter, system-ui, -apple-system, sans-serif;
     -webkit-tap-highlight-color: transparent;
 }
+
+:root {
+    --accent: #7c3aed; /* playful violet */
+    --accent-contrast: #ffffff;
+    --accent-light: #a78bfa;
+    --surface: #ffffff;
+    --muted: #6b7280;
+    --marked-bg: #dcfce7;
+    --winning-bg: #fde68a;
+    --modal-overlay: rgba(15, 23, 42, 0.6);
+}
+
+.playful-btn {
+    background: var(--accent);
+    color: var(--accent-contrast);
+    font-weight: 600;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 6px 18px rgba(124, 58, 237, 0.18);
+    transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+}
+.playful-btn:active { transform: translateY(1px) scale(0.996); box-shadow: 0 4px 12px rgba(124,58,237,0.12); }
+.playful-btn[disabled] { opacity: 0.6; cursor: default; box-shadow: none; }
+
+.playful-btn.ghost {
+    background: transparent;
+    color: var(--muted);
+    box-shadow: none;
+    border: 1px solid rgba(17,24,39,0.06);
+}
+
+.tile {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.9rem;
+    transition: transform 120ms ease, background-color 160ms ease, box-shadow 160ms ease;
+}
+.tile:active { transform: translateY(1px); }
+.tile .checkmark { color: #16a34a; font-weight: 700; }
+
+.modal-playful-card {
+    background: linear-gradient(180deg, var(--surface), #fffaf8);
+    border-radius: 1rem;
+    padding: 1.25rem;
+    box-shadow: 0 30px 60px rgba(2,6,23,0.4);
+    text-align: center;
+}
+.modal-overlay-playful { background: var(--modal-overlay); }
+
+@keyframes confetti-pop {
+    0% { transform: scale(0.95) translateY(-6%); opacity: 0; }
+    60% { transform: scale(1.02) translateY(0%); opacity: 1; }
+    100% { transform: scale(1) translateY(0%); opacity: 1; }
+}
+.bg-gradient-to-br { background: linear-gradient(to bottom right, var(--tw-gradient-stops)); }
+.from-purple-50 { --tw-gradient-from: #faf5ff; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(250, 245, 255, 0)); }
+.to-pink-50 { --tw-gradient-to: #fdf2f8; }
+
+.backdrop-blur-sm { backdrop-filter: blur(4px); }
+.bg-white\/80 { background-color: rgba(255, 255, 255, 0.8); }
+.border-white\/20 { border-color: rgba(255, 255, 255, 0.2); }
 
 /* Tailwind-like utility classes */
 .h-full { height: 100%; }
